@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+    int opcao;
+    float tensao, corrente, resistencia, potencia;
+
+    printf("Escolha a grandeza a ser calculada:\n");
+    printf("1 - Tens�o\n");
+    printf("2 - Corrente\n");
+    printf("3 - Resist�ncia\n");
+    printf("4 - Pot�ncia\n");
+    printf("Op��o: ");
+    scanf("%d", &opcao);
+
+    switch(opcao) {
+        case 1:
+            printf("Insira a corrente (em amperes): ");
+            scanf("%f", &corrente);
+            printf("Insira a resist�ncia (em ohms): ");
+            scanf("%f", &resistencia);
+            tensao = corrente * resistencia;
+            printf("\nTens�o: %.2f volts\n", tensao);
+            break;
+        case 2:
+            printf("Insira a tens�o (em volts): ");
+            scanf("%f", &tensao);
+            printf("Insira a resist�ncia (em ohms): ");
+            scanf("%f", &resistencia);
+            corrente = tensao / resistencia;
+            printf("\nCorrente: %.2f amperes\n", corrente);
+            break;
+        case 3:
+            printf("Insira a tens�o (em volts): ");
+            scanf("%f", &tensao);
+            printf("Insira a corrente (em amperes): ");
+            scanf("%f", &corrente);
+            resistencia = tensao / corrente;
+            printf("\nResist�ncia: %.2f ohms\n", resistencia);
+            break;
+        case 4:
+            printf("Insira a tens�o (em volts): ");
+            scanf("%f", &tensao);
+            printf("Insira a corrente (em amperes): ");
+            scanf("%f", &corrente);
+            potencia = tensao * corrente;
+            printf("\nPot�ncia: %.2f watts\n", potencia);
+            break;
+        default:
+            printf("Op��o inv�lida!\n");
+            break;
+    }
+
+    return 0;
+}
